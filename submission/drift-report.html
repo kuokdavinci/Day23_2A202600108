@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drift Detection Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .yes {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .no {
+            color: #27ae60;
+        }
+
+        .moderate {
+            color: #f39c12;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Evidently AI — Data Drift Report</h1>
+    <p>Generated: 2026-05-11 22:07:47</p>
+    <h2>Drift Summary</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>PSI</th>
+            <th>KL Divergence</th>
+            <th>KS Statistic</th>
+            <th>KS p-value</th>
+            <th>Drift Detected</th>
+        </tr>
+        <tr>
+            <td>prompt_length</td>
+            <td>3.4610</td>
+            <td>1.7982</td>
+            <td>0.7020</td>
+            <td>0.000000</td>
+            <td class="yes">yes</td>
+        </tr>
+        <tr>
+            <td>embedding_norm</td>
+            <td>0.0187</td>
+            <td>0.0324</td>
+            <td>0.0520</td>
+            <td>0.133853</td>
+            <td class="no">no</td>
+        </tr>
+        <tr>
+            <td>response_length</td>
+            <td>0.0162</td>
+            <td>0.0178</td>
+            <td>0.0560</td>
+            <td>0.086899</td>
+            <td class="no">no</td>
+        </tr>
+        <tr>
+            <td>response_quality</td>
+            <td>8.8486</td>
+            <td>13.5011</td>
+            <td>0.9410</td>
+            <td>0.000000</td>
+            <td class="yes">yes</td>
+        </tr>
+    </table>
+    <h2>Feature Distributions</h2>
+    <p>Reference vs Current distributions for each feature.</p>
+    <div style="background:white;padding:20px;margin-top:20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+        <h3>prompt_length — DRIFT DETECTED (PSI=3.461)</h3>
+        <p>Significant shift: reference mean=50, current mean=85. Users are sending much longer prompts.</p>
+        <h3>response_quality — DRIFT DETECTED (PSI=8.849)</h3>
+        <p>Severe degradation: reference quality ~0.8 (beta(8,2)), current quality ~0.25 (beta(2,6)).</p>
+        <h3>embedding_norm — NO DRIFT (PSI=0.019)</h3>
+        <p>Stable distribution, no significant change detected.</p>
+        <h3>response_length — NO DRIFT (PSI=0.016)</h3>
+        <p>Stable distribution, no significant change detected.</p>
+    </div>
+    <p style="margin-top:2em;color:#888;font-size:0.9em;">Evidently AI Drift Detection — Day 23 Observability Lab</p>
+</body>
+
+</html>

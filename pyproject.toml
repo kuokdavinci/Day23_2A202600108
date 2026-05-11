@@ -1,0 +1,12 @@
+[project]
+name = "day23-track2-observability-lab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[tool.uv.workspace]
+members = [
+    "01-instrument-fastapi/app",
+]

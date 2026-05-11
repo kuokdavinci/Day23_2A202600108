@@ -1,4 +1,5 @@
 .env
+02-prometheus-grafana/alertmanager/alertmanager.yml
 __pycache__/
 *.pyc
 *.pyo
@@ -8,9 +9,6 @@ venv/
 
 # Lab artifacts (generated)
 benchmarks/*.csv
-benchmarks/*.json
-submission/screenshots/*.png
-submission/screenshots/*.jpg
 
 # Local OS junk
 .DS_Store

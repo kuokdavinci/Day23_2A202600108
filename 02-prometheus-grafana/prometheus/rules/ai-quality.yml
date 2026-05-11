@@ -28,6 +28,7 @@ groups:
         annotations:
           summary: "inference-api is down"
           description: "Prometheus has been unable to scrape inference-api for 1 minute."
+          runbook_url: "https://wiki.example/runbooks/service-down"
 
       - alert: InferenceQualityDrop
         expr: avg(inference_quality_score) by (model) < 0.7
